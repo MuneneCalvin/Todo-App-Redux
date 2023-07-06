@@ -6,13 +6,14 @@ import NotFound from './pages/NotFound';
 import Todos from './pages/Todos';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { useSelector } from 'react-redux';
+import { Context } from './context/userContext/Context';
 import './app.css'
 
-import { Context } from './context/userContext/Context';
-
 function App() {
-  const { user } = useContext(Context);
-
+  // const { user } = useContext(Context);
+  const  user = useSelector((state)=>state.user.user?.username);
+  console.log(user)
   return (
     <div className='app'>
       <BrowserRouter>
@@ -30,4 +31,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
