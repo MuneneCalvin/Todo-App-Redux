@@ -1,7 +1,7 @@
-import { useEffect, useContext, useState } from 'react'
-import { apiDomain } from '../utils/utils'
-import axios from 'axios'
-import { Context } from '../context/userContext/Context'
+import { useEffect, useState } from 'react'
+// import { apiDomain } from '../utils/utils'
+// import axios from 'axios'
+// import { Context } from '../context/userContext/Context'
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai'
 import './todolist.css'
 import UpdateForm from './UpdateForm'
@@ -14,6 +14,7 @@ function TodoList() {
     const disaptch = useDispatch();
     const todos = useSelector((state)=>state.todos.todos)
     const user = useSelector((state)=>state.user.user);
+    console.log(user);   
     console.log(todos);
 
     useEffect(() => {

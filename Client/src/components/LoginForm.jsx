@@ -27,6 +27,7 @@ export default function LoginForm() {
     const onSubmit = (data) => {
         console.log(data);
         loginUser(dispatch,data);
+        navigate("/todos")      
         // {username ? navigate('/todos') : alert('please login again')}
         // Axios.post(`${apiDomain}/auth/login`, data)
         //     .then(({ data }) => {
