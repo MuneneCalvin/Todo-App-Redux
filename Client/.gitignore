@@ -1,0 +1,5 @@
+# Files not to be copied or pushed to the repo
+/bin
+/node_modules
+/.git
+.env
