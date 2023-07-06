@@ -10,6 +10,11 @@ app.use(bodyParser.json());
 //setup cors
 app.use(cors());
 
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+
 //JWT setup
 // app.use((req, res, next) => {
 //     if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT') {

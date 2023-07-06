@@ -14,7 +14,7 @@ export const loginRequired = (req, res, next) => {
 
 export const register = async (req, res) => {
     const { username, password, email } = req.body;
-    console.log(username, password, email     );  
+    console.log(username, password, email);  
     let hashPassword = bcrypt.hashSync(password, 10);
     try {
         let pool = await sql.connect(config.sql);
@@ -34,7 +34,7 @@ export const register = async (req, res) => {
             res.status(201).json({ message: 'User created successfully' });
         }
     } catch (error) {
-        res.status(500).json({ error: 'An error occurred while creating the user' });
+        res.status(500).json({ Message: `Failed to create the user. ${error.message}` });
     } finally {
         sql.close();
     }

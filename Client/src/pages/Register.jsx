@@ -11,7 +11,7 @@ export default function Register() {
     const navigate = useNavigate();
 
     const schema = yup.object().shape({
-        userName: yup.string().required("Username is required"),
+        username: yup.string().required("Username is required"),
         password: yup.string().required("Password is required"),
         email: yup.string().required("Password is required"),
     });
@@ -21,6 +21,7 @@ export default function Register() {
     });
 
     const onSubmit = (data) => {
+        console.log(data);
         Axios.post(`${apiDomain}/auth/register`, data)
             .then((response) => {
                 response.data.message && alert(response.data.message)
@@ -34,7 +35,7 @@ export default function Register() {
         <div className="formWrapper" >
             <form onSubmit={handleSubmit(onSubmit)} className="Form" >
                 <p className="loginBanner"> Register Page</p>
-                <input type="text" placeholder="Username" {...register("userName")} />
+                <input type="text" placeholder="Username" {...register("username")} />
                 <p>{errors.userName?.message}</p>
                 <input type="password" placeholder="Password..." {...register("password")} />
                 <p>{errors.password?.message}</p>
